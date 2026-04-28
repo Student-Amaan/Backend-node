@@ -1,0 +1,19 @@
+{
+  "name": "myproject",
+  "version": "1.0.0",
+  "description": "this is my project",
+  "keywords": [
+    "npm"
+  ],
+  "license": "ISC",
+  "author": "Aman",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "text"
+  },
+  "dependencies": {
+    "figlet": "^1.11.0",
+    "give-me-a-joke": "^0.5.1"
+  }
+}

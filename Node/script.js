@@ -15,5 +15,5 @@ for(let i=2; i<=args.length; i++){
     console.log('Hello & welcom', args[i])
 }
 
-const math = require('./math')
-console.log(math.sum(5,4))
+const math = require('./Fruits')
+console.log(math)
