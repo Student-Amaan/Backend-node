@@ -8,7 +8,7 @@ app.listen(port, () => {
 });
 
 app.get("/", (req, res) => {
-  res.send("Your contacted path is");
+  res.send("this is my directory");
 });
 app.get("/apple", (req, res) => {
   res.send("Your contacted apple is");
@@ -20,6 +20,15 @@ app.get("/orange", (req, res) => {
 app.post("/", (req, res) => {
   res.send("this is your post request");
 });
+
+app.get("/", (req , res) => {
+    res.send("this is my response")
+})
+
+app.get("/:username/:id", (req, res) => {
+    let {username, id} = req.params
+    res.send(`welcome to the page of ${username}`)
+})
 
 // app.get("*", (req, res) => {
 //   res.send("this page doesn't exist");
