@@ -7,6 +7,24 @@ app.listen(port, () => {
   console.log(`app listening on port ${port}`);
 });
 
+app.get("/", (req, res) => {
+  res.send("Your contacted path is");
+});
+app.get("/apple", (req, res) => {
+  res.send("Your contacted apple is");
+});
+app.get("/orange", (req, res) => {
+  res.send("Your contacted orange is");
+});
+
+app.post("/", (req, res) => {
+  res.send("this is your post request");
+});
+
+// app.get("*", (req, res) => {
+//   res.send("this page doesn't exist");
+// });
+
 // res.send({
 //     name: 'Aman',
 //     location: 'southwaziristan',
@@ -17,13 +35,3 @@ app.listen(port, () => {
 // app.use((req, res) => {
 //   console.log("request recived...");
 // });
-  app.get("/", (req, res) => {
-    res.send("Your contacted path is");
-  });
-  app.get("/apple", (req, res) => {
-    res.send("Your contacted apple is");
-  });
-  app.get("/orange", (req, res) => {
-    res.send("Your contacted orange is");
-  });
-
