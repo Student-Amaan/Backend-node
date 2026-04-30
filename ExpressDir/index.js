@@ -30,6 +30,14 @@ app.get("/:username/:id", (req, res) => {
     res.send(`welcome to the page of ${username}`)
 })
 
+app.get('/search', (req,res) => {
+    let {q} = req.query
+    if(!q){
+        res.send("<h1>nothing search</h1>")
+    }
+    res.send(`<h1>search result for query: ${q}</h1>`);
+})
+
 // app.get("*", (req, res) => {
 //   res.send("this page doesn't exist");
 // });
