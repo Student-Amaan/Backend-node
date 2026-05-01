@@ -12,8 +12,12 @@ app.get('/', (req , res) => {
 })
 
 app.get("/ig/:username", (req,res) => {
+    let instaData = require("./data.json")
+    // const followers = ["Aman", "dansih", "waxir", "tasela"]
     let {username} = req.params;
-    res.render("instagram.ejs", {username})
+    let data = instaData[username]
+    console.log(data)
+    res.render("instagram.ejs", {data})
 })
 app.get('/hello', (req , res) => {
     res.send("home hello")
