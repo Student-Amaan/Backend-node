@@ -16,8 +16,13 @@ app.get("/ig/:username", (req,res) => {
     // const followers = ["Aman", "dansih", "waxir", "tasela"]
     let {username} = req.params;
     let data = instaData[username]
-    console.log(data)
-    res.render("instagram.ejs", {data})
+    console.log(data) 
+    if(data){
+
+        res.render("instagram.ejs", {data})
+    }else{
+        res.render("error.ejs")
+    }
 })
 app.get('/hello', (req , res) => {
     res.send("home hello")

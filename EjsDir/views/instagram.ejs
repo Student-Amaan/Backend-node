@@ -1,16 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>instagram</title>
-    <style>
-        img{
-            height: 300px;
-            width: 400px;
-        }
-    </style>
-</head>
+<%- include('includes/head.ejs')  %>
 <body>
     <h2>this is your page: <%= data.name  %></h2>
     <button>Follow</button>
@@ -33,7 +21,7 @@
     
 
      
-        
+        <%- include("includes/footer.ejs") %>
 </body>
 </html>
 
