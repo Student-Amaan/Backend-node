@@ -9,7 +9,7 @@ app.use(express.urlencoded({extended: true}))
 
 app.set("view engine", 'ejs')
 app.set("views",path.join(__dirname,'views'))
-app.set(express.static,(path.join(__dirname,'public')))
+app.use(express.static(path.join(__dirname,'public')))
 
 
 let posts = [
@@ -27,7 +27,16 @@ let posts = [
     }
 ]
 app.get("/posts", (req , res) => {
-    res.send("Server working well!");
+    res.render("index.ejs", {posts});
+})
+app.get("/posts/new", (req , res) => {
+    res.render("new.ejs" )
+})
+
+app.post("/posts", (req, res) => {
+   let {username,content} = req.body
+   posts.push({username,content})
+    res.send("send request is working!")
 })
 
 app.listen(port, () => {
