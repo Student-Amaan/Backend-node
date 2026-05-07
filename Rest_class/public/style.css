@@ -34,7 +34,7 @@ h1 {
   }
 }
 
-.posts {
+.post {
   width: 320px;
   padding: 20px;
   margin: 15px 0;
@@ -45,7 +45,7 @@ h1 {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.posts:hover {
+.post:hover {
   transform: translateY(-8px);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.22);
 }

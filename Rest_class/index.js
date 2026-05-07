@@ -7,10 +7,6 @@ const path = require("path");
 
 const { v4: uuidv4 } = require("uuid");
 
-
-
- 
-
 app.use(express.urlencoded({ extended: true }));
 
 app.set("view engine", "ejs");
@@ -43,25 +39,25 @@ app.get("/posts/new", (req, res) => {
 
 app.post("/posts", (req, res) => {
   let { username, content } = req.body;
-  let id = uuidv4()
-  posts.push({id, username, content });
+  let id = uuidv4();
+  posts.push({ id, username, content });
   res.redirect("/posts");
 });
 app.get("/posts/:id", (req, res) => {
- let {id} = req.params;
- let post = posts.find((p) => id === p.id)
+  let { id } = req.params;
+  let post = posts.find((p) => id === p.id);
 
- res.render("show.ejs" , {post})
- 
+  res.render("show.ejs", { post });
 });
 
 app.patch("/posts/:id", (req, res) => {
-    let { id } = req.params;
-    let newContent = req.body.content
-    console.log(newContent)
-    
-    res.send("Patch request is working")
-})
+  let { id } = req.params;
+  let newContent = req.body.content;
+  let post = posts.find((p) => id === p.id);
+  post.content = newContent;
+  console.log(post);
+  res.send("Patch request is working");
+});
 
 app.listen(port, () => {
   console.log(`port is listening for ${port}...`);
